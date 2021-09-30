@@ -4,6 +4,11 @@ import { Router } from '@reach/router';
 
 import NavBar from './web-layout-components/NavBar';
 import Index from './components/Index';
+import About from './components/About';
+import Services from './components/Services';
+import Contact from './components/Contact';
+import Login from './components/Login';
+import Register from './components/Register';
 
 
 function App() {
@@ -15,6 +20,11 @@ function App() {
       <NavBar />
       <Router>
         <Index path="/" />
+        <About path="/about-us" />
+        <Services path="/services" />
+        <Contact path="/contact-us" />
+        <Login path="/login" />
+        <Register path="/register" />
 
       </Router>
     </div>

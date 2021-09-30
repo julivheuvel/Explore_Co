@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "@reach/router";
 
 const NavBar = () => {
 
@@ -7,11 +8,11 @@ const NavBar = () => {
         <div className="navbar">
             <h1>Explore Co</h1>
             <div className="sub-navbar">
-                <div>home</div>
-                <div>about</div>
-                <div>services</div>
-                <div>contact</div>
-                <div>login</div>
+                <Link to="/">home</Link>
+                <Link to="/about-us">about</Link>
+                <Link to="/services">services</Link>
+                <Link to="/contact-us">contact</Link>
+                <Link to="/login">login</Link>
             </div>
         </div>
     )
