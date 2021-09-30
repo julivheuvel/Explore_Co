@@ -2,7 +2,10 @@ import './App.css';
 import React from 'react';
 import { Router } from '@reach/router';
 
+// web-layout-components
 import NavBar from './web-layout-components/NavBar';
+
+// components
 import Index from './components/Index';
 import About from './components/About';
 import Services from './components/Services';
