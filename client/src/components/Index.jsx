@@ -1,11 +1,15 @@
 import React from "react";
 
+// web-layout-components
+import NavBar from '../web-layout-components/NavBar';
+
 const Index = () => {
 
 
     return (
         <div>
-            <div className="index d-flex">
+            <div className="index">
+            <NavBar />
                 <div className="index-content">
                     <h4 className="start-exploring">START EXPLORING</h4>
                     <div className="d-flex">

@@ -44,7 +44,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   /* background-color: rgb(131, 209, 183); */
-  height: 88.3vh;
+  height: 100vh;
   width: 100%;
 }
 .index > img {
@@ -74,12 +74,13 @@
 }
 
 
+/* QUESTIONAIRE */
 .questionaire {
   background-image: url('./assets/backgrounds/questionaire.png');
   background-repeat: no-repeat;
   background-size: cover;
   /* background-color: rgb(131, 209, 183); */
-  height: 88.3vh;
+  height: 100vh;
   width: 100%;
 }
 
@@ -87,6 +88,25 @@
   width: 100%;
   height: auto;
 }
+
+/* REGISTER */
+.register {
+  background-image: url('./assets/backgrounds/register.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+}
+
+.register > img {
+  width: 100%;
+  height: auto;
+}
+
+
+
+
+/* image notes for later */
 
 /* For devices smaller than 400px: */
 /* body {
