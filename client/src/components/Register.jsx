@@ -9,6 +9,8 @@ const Register = () => {
             <h1>Explore Co Register Page</h1>
 
             <h3>juli's testing things</h3>
+
+            <div>registeer register register</div>
         </div>
     )
 }
