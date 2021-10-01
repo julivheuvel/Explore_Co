@@ -19,9 +19,9 @@ class UserController {
         // ============
         //  Find one user
         // ============
-        user.findOne({email:req.body.email})
-            .then(user => () {
-                if(user == null) {
+        User.findOne({email:req.body.email})
+            .then(user => {
+                if(user == null){
                     res.json({msg: "Email issues"}) //any error with email will show up here; make sure to both the error messages for password and email to be the same later
                 } else {
                     bcrypt.compare(req.body.password, user.password)
