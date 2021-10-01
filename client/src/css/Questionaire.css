@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* MISC  */
+.d-flex {
+    display: flex;
+}
+
+
+/* QUESTIONAIRE */
+.questionaire {
+    background-image: url('../assets/backgrounds/questionaire.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-color: rgb(131, 209, 183); */
+    height: 100vh;
+    width: 100%;
+}
+
+.questionaire>img {
+    width: 100%;
+    height: auto;
+}
