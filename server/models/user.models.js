@@ -36,7 +36,26 @@ const UserSchema = new mongoose.Schema({
         //     },
     },
     // CHILD PROFILE    - make more than one child profile?
-    child: {
+    child1: {
+        name: {
+            type: String,
+            required: [true, "Child's name required"]
+        },
+        ageGroup: {
+            type: String,
+            required: [true, "Age Group required"]
+        },
+        interestTag1: {
+            type: String
+        },
+        interestTag2: {
+            type: String
+        },
+        interestTag3: {
+            type: String
+        }
+    },
+    child2: {
         name: {
             type: String,
             required: [true, "Child's name required"]

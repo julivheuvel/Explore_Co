@@ -11,3 +11,15 @@
 .d-flex {
     display: flex;
 }
+
+.about-content {
+    margin: 0 4em;
+    padding: 1em;
+    background-color: rgb(255, 237, 136);
+    border-radius: 10px;
+    margin-bottom: 2em;
+}
+
+.about-content > div, h2 {
+    margin: 1em 0;
+}

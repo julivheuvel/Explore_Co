@@ -45,6 +45,22 @@
     width: 14em;
     border-radius: 12px;
 }
+.start-exploring:active {
+    transform: scale(0.90);
+    width: 14.5em;
+}
+
+.start-exploring:hover {
+    animation-name: explore;
+    animation-duration: 0.5s;
+    animation-delay: 0.2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes explore {
+    from {width: 14em;}
+    to {width: 14.5em;}
+}
 
 .index-quote {
     border: 1px red dashed;
