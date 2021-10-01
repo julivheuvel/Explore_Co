@@ -27,16 +27,39 @@
 .navbar {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 2em 1em;
+    padding: 2em 0;
+
 }
 
-.navbar>h1 {
-    font-family: 'Bebas Neeue', arial;
+.explore-co {
+    font-family: 'Bebas Neue', arial;
+    font-size: 40px;
+    font-weight: lighter;
+    margin: 0 2em;
 }
 
 .sub-navbar {
     display: flex;
     width: 40%;
     justify-content: space-evenly;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    margin-top: 1em;
+    /* border: 1px red dashed; */
+}
+
+.nav-link {
+    text-decoration: none;
+    color: black;
+}
+.nav-link:hover {
+    transform: scale(1.03);
+    color: grey;
+}
+.nav-link:visited {
+    color: black;
+}
+.nav-link:active {
+    transform: scale(0.97);
+    color: grey;
 }
