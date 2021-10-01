@@ -5,8 +5,25 @@ const Index = () => {
 
     return (
         <div>
-            <div className="index">
-                <h1>Explore Co testing Page</h1>
+            <div className="index d-flex">
+                <div className="index-content">
+                    <h4 className="start-exploring">START EXPLORING</h4>
+                    <div className="d-flex">
+                        
+                        <div className="index-quote">" icon</div>
+                        <div>
+                            <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente libero veniam, nostrum a, dignissimos, quod maiores alias officia labore hic itaque commodi velit odit autem aspernatur beatae provident tempora consequatur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero totam fuga, dolor harum reprehenderit magni quas numquam aperiam facere temporibus soluta similique mollitia quis. Fugit eaque et vel ex eligendi!</div>
+                            <div className="d-flex">
+                                <div>icon image</div>
+                                <div>
+                                    <div>john adams</div>
+                                    <div>grand rapids</div>
+                                </div>
+                            </div>
+                            <div>learn more button</div>
+                        </div>
+                    </div>
+                </div>
             </div>
             
         </div>
