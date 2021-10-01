@@ -23,12 +23,13 @@ const UserSchema = new mongoose.Schema({
     newsletter: {
         type: Boolean,
     },
+    // ============
+    //  Password --> add the validator with regex later after testing
+    // ============
     password: {
         type: String,
         required: [true, "Password is required"],
-
-        //////
-        // minlength: [8, "Password must be 8 characters or longer"],
+        minlength: [8, "Password must be 8 characters or longer"],
         // validate: {
         //     validator: val => /^[a-zA-Z]$/.test(val), 
         //     message: "Password must contain at least one letter AND one number"
@@ -56,14 +57,16 @@ const UserSchema = new mongoose.Schema({
     }
 }, {timestamps: true});
 
-
-
+// ============
+//  Confirming passowrd via virtual field
+// ============
 UserSchema.virtual('confirm')
     .get(() => this._confirm)
     .set(value => this._confirm = value);
 
-
-
+// ============
+//  Validating the passwords match eachother via virtual field
+// ============
 UserSchema.pre('validate', function(next) {
     if (this.password !== this.confirm) {
         this.invalidate('confirm', 'Passwords must match');
@@ -71,16 +74,18 @@ UserSchema.pre('validate', function(next) {
     next();
 });
 
-
-
+// ============
+//  Hashing user password before saving to the DB
+// ============
 UserSchema.pre('save', function(next) {
     bcrypt.hash(this.password, 10)
         .then(hash => {
             this.password = hash;
             next();
-        });
+        })
+        .catch(err => {
+            counsel.log("There is an error in the hashing")
+        })
 });
-
-
 
 module.exports = mongoose.model("User", UserSchema);
