@@ -73,6 +73,21 @@
   margin: 1em 5em;
 }
 
+
+.questionaire {
+  background-image: url('./assets/backgrounds/questionaire.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-color: rgb(131, 209, 183); */
+  height: 88.3vh;
+  width: 100%;
+}
+
+.index > img {
+  width: 100%;
+  height: auto;
+}
+
 /* For devices smaller than 400px: */
 /* body {
   background-image: url('img_smallflower.jpg');

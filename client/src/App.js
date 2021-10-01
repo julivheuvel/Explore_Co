@@ -12,6 +12,7 @@ import Services from './components/Services';
 import Contact from './components/Contact';
 import Login from './components/Login';
 import Register from './components/Register';
+import Questionaire from './components/Questionaire';
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <Contact path="/contact-us" />
         <Login path="/login" />
         <Register path="/register" />
+        <Questionaire path="/questionaire" />
 
       </Router>
     </div>
