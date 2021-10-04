@@ -103,7 +103,7 @@ UserSchema.pre('save', function(next) {
             next();
         })
         .catch(err => {
-            counsel.log("There is an error in the hashing")
+            console.log("There is an error in the hashing")
         })
 });
 
