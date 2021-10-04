@@ -17,13 +17,14 @@ app.use(cors({
 //  Configure to use cookies
 // ============
 app.use(cookie());
-app.use(express.json(), express.urlencoded({extended: true}), cors());
+app.use(express.json(), express.urlencoded({extended: true}));
 
 
-require("./server/config/mongoose.config.users")()
+require("./server/config/mongoose.config.users")
 require("./server/routes/user.routes")(app)
 
-// require("./server/config/mongoose.config")
+require("./server/config/mongoose.config")
+require("./server/routes/activities.routes")(app)
 
 app.listen(
     port,
