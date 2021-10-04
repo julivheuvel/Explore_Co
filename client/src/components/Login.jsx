@@ -44,7 +44,7 @@ const Login = () => {
                     </div>
                     <div className="register-form-group">
                         <label>Password:</label>
-                        <input type="password" className="" name="password" />
+                        <input type="password" className="" name="password" onChange={onChangeHandler}/>
                     </div>
                     <input type = "submit" value = "Login" />
                 </form>
