@@ -18,7 +18,12 @@ module.exports = app => {
     app.get("/api/users/getloggedinuser", authenticate, UserController.getLoggedInUser);
     
     // ============
-    //  Login User
+    //  Get All User
     // ============
     app.get("/api/all", UserController.findAllUsers);
+
+    // ============
+    //  Logout User
+    // ============
+    app.get("/api/logout", UserController.logout);
 }

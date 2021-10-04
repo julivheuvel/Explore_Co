@@ -54,6 +54,16 @@ class UserController {
             .then(allUsers => res.json({results: allUsers}))
             .catch(err => res.json({message: "All users not found", error: err}))
     }
+
+    // ============
+    //  Logout
+    // ============
+    logout(req,res){
+        res.cookie("usertoken", jwt.sign({_id:""}, secret), {
+            httpOnly: true,
+            maxAge: 0
+        }).json({msg:"ok"})
+    }
 }
 
 module.exports = new UserController();
