@@ -1,11 +1,33 @@
 import { Link } from "@reach/router";
-import React from "react";
+import e from "express";
+import React, { useState } from "react";
 // web-layout-components
 import NavBar from '../web-layout-components/NavBar';
 
 
 const Login = () => {
 
+    const [formInfo, setFormInfo] = useState({
+        email: "",
+        password: ""
+    })
+
+    const [errorMsg, setErrorMsg] = useState(null);
+
+    const onChangeHandler = (event) => {
+        setFormInfo({
+            ...formInfo,
+            [event.target.name]:event.target.value
+        })
+    }
+
+    const login = (event) => {
+        event.preventDefault();
+        axios.post("http://localhost:8000/api/login", formInfo, {withCredentials:true})
+            .then(res => {
+                console.log(res)
+            })
+    }
 
     return (
         <div className="login">
@@ -13,14 +35,16 @@ const Login = () => {
             <h1>Explore Co Login Page</h1>
 
             <div className = "container">
-                <form>
+                <form onSubmit = {login}>
+                    {errorMsg ? <p>{errorMsg}</p> : ""}
+
                     <div className="register-form-group">
                         <label>Email:</label>
-                        <input type="text" className="" name="email" />
+                        <input type="text" className="" name="email" onChange={onChangeHandler}/>
                     </div>
                     <div className="register-form-group">
                         <label>Password:</label>
-                        <input type="text" className="" name="password" />
+                        <input type="password" className="" name="password" />
                     </div>
                     <input type = "submit" value = "Login" />
                 </form>
