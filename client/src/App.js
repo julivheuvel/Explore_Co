@@ -4,6 +4,7 @@ import { Router } from '@reach/router';
 // CSS
 import './css/About.css';
 import './css/Contact.css';
+import "./css/Dashboard.css";
 import './css/Index.css';
 import './css/Login.css';
 import './css/NavBar.css';
@@ -14,6 +15,7 @@ import './css/Services.css';
 // components
 import About from './components/About';
 import Contact from './components/Contact';
+import Dashboard from './components/Dashboard';
 import Index from './components/Index';
 import Login from './components/Login';
 import Questionaire from './components/Questionaire';
@@ -29,6 +31,7 @@ function App() {
       <Router>
         <About path="/about-us" />
         <Contact path="/contact-us" />
+        <Dashboard path="/dashboard" />
         <Index path="/" />
         <Login path="/login" />
         <Questionaire path="/questionaire" />

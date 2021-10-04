@@ -46,7 +46,7 @@ const Register = () => {
                     setErrors(res.data.errors)
                 } else {
                     console.log("Registration successful, navigating to contact us for now")
-                    navigate("/contact-us")
+                    navigate("/dashboard")
                 }
             })
             .catch(err => console.log(err))

@@ -27,7 +27,7 @@ const Login = () => {
             .then(res => {
                 console.log(res)
                 if(res.data.msg === "success!") {
-                    navigate("/contact-us")
+                    navigate("/dashboard")
                     console.log("navigating to contact for now because we didn't get this far...?")
                 }
                 else {
