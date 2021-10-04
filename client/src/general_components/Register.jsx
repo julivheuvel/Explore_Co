@@ -68,32 +68,32 @@ const Register = () => {
                         <label>First Name:</label>
                         <input onChange = {regChangeHandler} type="text" className="form-input" name="parent_first_name" />
                     </div>
-                    {errors.parent_first_name? <p className = "text-danger error" > {errors.parent_first_name.message}</p>: ""}
+                    {errors.parent_first_name? <p className = "text-danger" > {errors.parent_first_name.message}</p>: ""}
                     <div className="form-group">
                         <label>Last Name:</label>
                         <input onChange = {regChangeHandler} type="text" className="form-input" name="parent_last_name" />
                     </div>
-                    {errors.parent_last_name? <p className = "text-danger error" > {errors.parent_last_name.message}</p>: ""}
+                    {errors.parent_last_name? <p className = "text-danger" > {errors.parent_last_name.message}</p>: ""}
                     <div className="form-group">
                         <label>Email:</label>
                         <input onChange = {regChangeHandler} type="text" className="form-input" name="email" />
                     </div>
-                    {errors.email? <p className = "text-danger error" > {errors.email.message}</p>: ""}
+                    {errors.email? <p className = "text-danger" > {errors.email.message}</p>: ""}
                     <div className="form-group">
                         <label>Password:</label>
                         <input onChange = {regChangeHandler} type="password" className="form-input" name="password" />
                     </div>
-                    {errors.password? <p className = "text-danger error" > {errors.password.message}</p>: ""}
+                    {errors.password? <p className = "text-danger" > {errors.password.message}</p>: ""}
                     <div className="form-group">
                         <label>Confirm Password:</label>
                         <input onChange = {regChangeHandler} type="password" className="form-input" name="confirm_password" />
                     </div>
-                    {errors.confirm_password? <p className = "text-danger error" > {errors.confirm_password.message}</p>: ""}
+                    {errors.confirm_password? <p className = "text-danger" > {errors.confirm_password.message}</p>: ""}
                     <div className="form-group">
                         <label>Sigun up for our Newsletter:</label>
                         <input onChange = {regChangeHandler} type="checkbox" className="form-input" name="newsletter" />
                     </div>
-                    <input type = "submit" className="register-btn" value = "Register" />
+                    <input type = "submit" className="btn" value = "Register" />
                 </form>
             </div>
         </div>

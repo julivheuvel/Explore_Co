@@ -53,18 +53,18 @@
 }
 
 /* btn */
-.register-btn {
+.btn {
     padding: 0.75em;
     background-color: rgb(255, 237, 136);
     color: grey;
     border-radius: 5px;
     font-weight: bold;
 }
-.register-btn:hover {
+.btn:hover {
     background-color: rgb(56, 56, 56);
     color: white;
     transform: scale(1.05);
 }
-.register-btn:active {
+.btn:active {
     transform: scale(0.95);
 }

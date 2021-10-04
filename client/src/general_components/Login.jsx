@@ -45,19 +45,19 @@ const Login = () => {
 
             <div className = "container">
                 <form onSubmit = {login}>
-                    {errorMsg ? <p>{errorMsg}</p> : ""}
+                    {errorMsg ? <p className="text-danger">{errorMsg}</p> : ""}
 
-                    <div className="register-form-group">
+                    <div className="form-group">
                         <label>Email:</label>
-                        <input type="text" className="" name="email" onChange={onChangeHandler}/>
+                        <input type="text" className="form-input" name="email" onChange={onChangeHandler}/>
                         {/* {errorMsg.email? <p className="text-danger">{errorMsg.email.message}</p>: ""} */}
                     </div>
-                    <div className="register-form-group">
+                    <div className="form-group">
                         <label>Password:</label>
-                        <input type="password" className="" name="password" onChange={onChangeHandler}/>
+                        <input type="password" className="form-input" name="password" onChange={onChangeHandler}/>
                         {/* {errorMsg.password? <p className = "text-danger" > {errorMsg.password.message}</p>: ""} */}
                     </div>
-                    <input type = "submit" value = "Login" />
+                    <input type = "submit" value = "Login" className="btn"/>
                 </form>
             </div>
             
