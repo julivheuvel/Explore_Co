@@ -66,11 +66,11 @@ const Register = () => {
                     </div>
                     <div className="register-form-group">
                         <label>Password:</label>
-                        <input onChange = {regChangeHandler} type="text" className="" name="password" />
+                        <input onChange = {regChangeHandler} type="password" className="" name="password" />
                     </div>
                     <div className="register-form-group">
                         <label>Confirm Password:</label>
-                        <input onChange = {regChangeHandler} type="text" className="" name="confirm_password" />
+                        <input onChange = {regChangeHandler} type="password" className="" name="confirm_password" />
                     </div>
                     <div className="register-form-group">
                         <label>Sigun up for our Newsletter:</label>
