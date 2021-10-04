@@ -6,6 +6,6 @@ module.exports = ()=>{
         useNewUrlParser:true,
         useUnifiedTopology:true
     } )
-    .then(() => console.log('Established a connection to the database'))
-    .catch(err => console.log('Something went wrong when connecting to the database ', err));
+    .then(() => console.log('Established a connection to the Login/Reg database'))
+    .catch(err => console.log('Something went wrong when connecting to the Login/Reg database ', err));
 }

@@ -45,6 +45,16 @@ class UserController {
             .then(user=> res.json(user))
             .catch(err=> res.json(err))
     }
+
+
+    // ============
+    //  Find All 
+    // ============
+    findAllUsers = (req, res) => {
+        User.find({})
+            .then(allUsers => res.json({results: allUsers}))
+            .catch(err => res.json({message: "All users not found", error: err}))
+    }
 }
 
 module.exports = new UserController();

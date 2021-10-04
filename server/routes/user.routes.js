@@ -16,4 +16,9 @@ module.exports = app => {
     //  authenticating user
     // ============
     app.get("/api/users/getloggedinuser", authenticate, UserController.getLoggedInUser);
+    
+    // ============
+    //  Login User
+    // ============
+    app.get("/api/all", UserController.findAllUsers);
 }
