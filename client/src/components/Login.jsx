@@ -1,6 +1,6 @@
-import { Link } from "@reach/router";
-import e from "express";
+import { Link, navigate } from "@reach/router";
 import React, { useState } from "react";
+import axios from 'axios';
 // web-layout-components
 import NavBar from '../web-layout-components/NavBar';
 
@@ -26,7 +26,15 @@ const Login = () => {
         axios.post("http://localhost:8000/api/login", formInfo, {withCredentials:true})
             .then(res => {
                 console.log(res)
+                if(res.data.msg === "success!") {
+                    navigate("/contact-us")
+                    console.log("navigating to contact for now because we didn't get this far...?")
+                }
+                else {
+                    setErrorMsg(res.data.msg)
+                }
             })
+            .catch(err => console.log(err))
     }
 
     return (
@@ -41,6 +49,7 @@ const Login = () => {
                     <div className="register-form-group">
                         <label>Email:</label>
                         <input type="text" className="" name="email" onChange={onChangeHandler}/>
+                        {/* {errors.email? <p className="text-danger">{errors.email.message}</p>: ""} */}
                     </div>
                     <div className="register-form-group">
                         <label>Password:</label>
