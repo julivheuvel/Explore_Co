@@ -3,6 +3,7 @@ import axios from 'axios';
 // import Login from './Login';
 // web-layout-components
 import NavBar from '../web-layout-components/NavBar';
+import { navigate } from "@reach/router";
 
 const Register = () => {
 
@@ -12,23 +13,28 @@ const Register = () => {
         email:"",
         password:"",
         confirm_password:"",
-        newsletter:"",
+        newsletter: false
     });
 
     const [errors, setErrors] = useState({
-        parent_first_name:"",
-        parent_last_name:"",
-        email:"",
-        password:"",
-        confirm_password:"",
-        newsletter:"",
+
     })
 
     const regChangeHandler = (e) =>{
-        setRegistrationInfo({
-            ...registrationInfo,
-            [e.target.name]:e.target.value
-        })
+
+        if(e.target.type === "checkbox") {
+            setRegistrationInfo({
+                ...registrationInfo,
+                [e.target.name]:e.target.checked
+            })
+        }
+        else {
+            setRegistrationInfo({
+                ...registrationInfo,
+                [e.target.name]:e.target.value
+            })
+        }
+        
     }
 
     const register = (e) => {
@@ -39,7 +45,8 @@ const Register = () => {
                 if(res.data.errors) {
                     setErrors(res.data.errors)
                 } else {
-                    console.log("Registration successful")
+                    console.log("Registration successful, navigating to contact us for now")
+                    navigate("/contact-us")
                 }
             })
             .catch(err => console.log(err))
