@@ -22,6 +22,7 @@ const Register = () => {
 
     const regChangeHandler = (e) =>{
 
+        // if else statement to create true/false responses to match boolean in model instead of on/off
         if(e.target.type === "checkbox") {
             setRegistrationInfo({
                 ...registrationInfo,
