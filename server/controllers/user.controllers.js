@@ -38,4 +38,13 @@ class UserController {
             })
             .catch(err => res.json(err))
     }
+
+    getLoggedInUser(req,res){
+        const decodedJWT = jwt.decode(req.cookies.usertoken, {complete:true});
+        User.findById(decodedJWT.payload._id)
+            .then(user=> res.json(user))
+            .catch(err=> res.json(err))
+    }
 }
+
+module.exports = new UserController();

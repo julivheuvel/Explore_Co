@@ -36,59 +36,59 @@ const UserSchema = new mongoose.Schema({
         //     },
     },
     // CHILD PROFILE    - make more than one child profile?
-    child1: {
-        name: {
-            type: String,
-            required: [true, "Child's name required"]
-        },
-        ageGroup: {
-            type: String,
-            required: [true, "Age Group required"]
-        },
-        interestTag1: {
-            type: String
-        },
-        interestTag2: {
-            type: String
-        },
-        interestTag3: {
-            type: String
-        }
-    },
-    child2: {
-        name: {
-            type: String,
-            required: [true, "Child's name required"]
-        },
-        ageGroup: {
-            type: String,
-            required: [true, "Age Group required"]
-        },
-        interestTag1: {
-            type: String
-        },
-        interestTag2: {
-            type: String
-        },
-        interestTag3: {
-            type: String
-        }
-    }
+    // child1: {
+    //     name: {
+    //         type: String,
+    //         required: [true, "Child's name required"]
+    //     },
+    //     ageGroup: {
+    //         type: String,
+    //         required: [true, "Age Group required"]
+    //     },
+    //     interestTag1: {
+    //         type: String
+    //     },
+    //     interestTag2: {
+    //         type: String
+    //     },
+    //     interestTag3: {
+    //         type: String
+    //     }
+    // },
+    // child2: {
+    //     name: {
+    //         type: String,
+    //         required: [true, "Child's name required"]
+    //     },
+    //     ageGroup: {
+    //         type: String,
+    //         required: [true, "Age Group required"]
+    //     },
+    //     interestTag1: {
+    //         type: String
+    //     },
+    //     interestTag2: {
+    //         type: String
+    //     },
+    //     interestTag3: {
+    //         type: String
+    //     }
+    // }
 }, {timestamps: true});
 
 // ============
 //  Confirming passowrd via virtual field
 // ============
-UserSchema.virtual('confirm')
-    .get(() => this._confirm)
-    .set(value => this._confirm = value);
+UserSchema.virtual('confirm_password')
+    .get(() => this._confirm_password)
+    .set(value => this._confirm_password = value);
 
 // ============
 //  Validating the passwords match eachother via virtual field
 // ============
 UserSchema.pre('validate', function(next) {
-    if (this.password !== this.confirm) {
-        this.invalidate('confirm', 'Passwords must match');
+    if (this.password !== this.confirm_password) {
+        this.invalidate('confirm_password', 'Passwords must match');
     }
     next();
 });
