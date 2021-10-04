@@ -12,15 +12,19 @@ import './css/Questionaire.css';
 import './css/Register.css';
 import './css/Services.css';
 
-// components
-import About from './components/About';
-import Contact from './components/Contact';
-import Dashboard from './components/Dashboard';
-import Index from './components/Index';
-import Login from './components/Login';
-import Questionaire from './components/Questionaire';
-import Register from './components/Register';
-import Services from './components/Services';
+// general components
+import About from './general_components/About';
+import Contact from './general_components/Contact';
+import Index from './general_components/Index';
+import Login from './general_components/Login';
+import Questionaire from './general_components/Questionaire';
+import Register from './general_components/Register';
+import Services from './general_components/Services';
+
+// members_only_components
+import Dashboard from './members_only_components/Dashboard';
+
+// activities_components
 
 
 function App() {
