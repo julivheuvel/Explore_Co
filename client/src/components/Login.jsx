@@ -50,11 +50,12 @@ const Login = () => {
                     <div className="register-form-group">
                         <label>Email:</label>
                         <input type="text" className="" name="email" onChange={onChangeHandler}/>
-                        {/* {errors.email? <p className="text-danger">{errors.email.message}</p>: ""} */}
+                        {/* {errorMsg.email? <p className="text-danger">{errorMsg.email.message}</p>: ""} */}
                     </div>
                     <div className="register-form-group">
                         <label>Password:</label>
                         <input type="password" className="" name="password" onChange={onChangeHandler}/>
+                        {/* {errorMsg.password? <p className = "text-danger" > {errorMsg.password.message}</p>: ""} */}
                     </div>
                     <input type = "submit" value = "Login" />
                 </form>

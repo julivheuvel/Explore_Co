@@ -41,6 +41,11 @@ const Register = () => {
         e.preventDefault();
         axios.post("http://localhost:8000/api/register", registrationInfo, {withCredentials:true})
             .then(res => {
+
+                console.log("*****************")
+                console.log(res.data.message)
+                console.log("*****************")
+
                 console.log("Registration works", res);
                 if(res.data.errors) {
                     setErrors(res.data.errors)
@@ -66,18 +71,22 @@ const Register = () => {
                     <div className="register-form-group">
                         <label>Last Name:</label>
                         <input onChange = {regChangeHandler} type="text" className="" name="parent_last_name" />
+                        {errors.parent_last_name? <p className = "text-danger" > {errors.parent_last_name.message}</p>: ""}
                     </div>
                     <div className="register-form-group">
                         <label>Email:</label>
                         <input onChange = {regChangeHandler} type="text" className="" name="email" />
+                        {errors.email? <p className = "text-danger" > {errors.email.message}</p>: ""}
                     </div>
                     <div className="register-form-group">
                         <label>Password:</label>
                         <input onChange = {regChangeHandler} type="password" className="" name="password" />
+                        {errors.password? <p className = "text-danger" > {errors.password.message}</p>: ""}
                     </div>
                     <div className="register-form-group">
                         <label>Confirm Password:</label>
                         <input onChange = {regChangeHandler} type="password" className="" name="confirm_password" />
+                        {errors.confirm_password? <p className = "text-danger" > {errors.confirm_password.message}</p>: ""}
                     </div>
                     <div className="register-form-group">
                         <label>Sigun up for our Newsletter:</label>
