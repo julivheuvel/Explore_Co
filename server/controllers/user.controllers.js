@@ -14,20 +14,19 @@ class UserController {
             .catch(err => res.json(err))
     }
 
+    // ============
+    //  Find one user
+    // ============
     login(req, res) {
-
-        // ============
-        //  Find one user
-        // ============
         User.findOne({email:req.body.email})
             .then(user => {
                 if(user === null){
-                    res.json({msg: "Email issues"}) //any error with email will show up here; make sure to both the error messages for password and email to be the same later
+                    res.json({msg: "Invalid login attempt - user not found"}) //any error with email will show up here; make sure to both the error messages for password and email to be the same later
                 } else {
                     bcrypt.compare(req.body.password, user.password)
                     .then(passwordIsValid => {
                         if(passwordIsValid) {
-                            res.cookie("usertoken", jwt.sign({_id:user_id}, secret), {httpOnly})
+                            res.cookie("usertoken", jwt.sign({_id:user._id}, secret), {httpOnly:true})
                                 .json({msg: "success!"});
                         } else {
                             res.json({msg: "Invalid Password but email is correct"}) // remember to change this to match errors with email
@@ -36,17 +35,7 @@ class UserController {
                     .catch(err => res.json({msg: "Invalid Login Attempt", err}))
                 }
             })
-            .catch(err => res.json(err))
-
-        // ============
-        //  Find All users
-        // ============
-        module.exports.findAll = (req, res) => {
-            User.find({})
-                .sort({ type: 'asc'})
-                .then(user => res.json({results: user}))
-                .catch(err => res.json({message: "Cannot find User!", error: err}))
-        }
+            .catch(err => res.json({msg: "secondary invalid login attempt error thing", err}))
     }
 
     getLoggedInUser(req,res){

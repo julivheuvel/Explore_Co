@@ -32,6 +32,7 @@ const Login = () => {
                 }
                 else {
                     setErrorMsg(res.data.msg)
+                    console.log(res.data.msg)
                 }
             })
             .catch(err => console.log(err))
