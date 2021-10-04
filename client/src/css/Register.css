@@ -25,3 +25,46 @@
     width: 100%;
     height: auto;
 }
+
+.register>h1 {
+    margin: 1em auto;
+    width: 30%;
+    text-align: center;
+    border-bottom: 0.3px rgb(179, 179, 179) solid;
+}
+.container {
+    margin: 0 auto;
+    width: 30%;
+}
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    font-size: large;
+    margin: 1em 0;
+}
+.form-input {
+    background-color: whitesmoke;
+    border: 1px rgb(170, 170, 170) solid;
+    padding: 0.5em;
+    border-radius: 5px;
+}
+.text-danger {
+    color: rgb(202, 0, 0);
+}
+
+/* btn */
+.register-btn {
+    padding: 0.75em;
+    background-color: rgb(255, 237, 136);
+    color: grey;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.register-btn:hover {
+    background-color: rgb(56, 56, 56);
+    color: white;
+    transform: scale(1.05);
+}
+.register-btn:active {
+    transform: scale(0.95);
+}

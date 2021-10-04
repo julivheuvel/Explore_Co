@@ -61,39 +61,39 @@ const Register = () => {
     return (
         <div className="register">
             <NavBar />
-            <h1>Explore Co Register Page</h1>
+            <h1>Explore Co Registration</h1>
             <div className = "container">
                 <form onSubmit = {register}>
-                    <div className="register-form-group">
+                    <div className="form-group">
                         <label>First Name:</label>
-                        <input onChange = {regChangeHandler} type="text" className="" name="parent_first_name" />
-                        {errors.parent_first_name? <p className = "text-danger" > {errors.parent_first_name.message}</p>: ""}
+                        <input onChange = {regChangeHandler} type="text" className="form-input" name="parent_first_name" />
                     </div>
-                    <div className="register-form-group">
+                    {errors.parent_first_name? <p className = "text-danger error" > {errors.parent_first_name.message}</p>: ""}
+                    <div className="form-group">
                         <label>Last Name:</label>
-                        <input onChange = {regChangeHandler} type="text" className="" name="parent_last_name" />
-                        {errors.parent_last_name? <p className = "text-danger" > {errors.parent_last_name.message}</p>: ""}
+                        <input onChange = {regChangeHandler} type="text" className="form-input" name="parent_last_name" />
                     </div>
-                    <div className="register-form-group">
+                    {errors.parent_last_name? <p className = "text-danger error" > {errors.parent_last_name.message}</p>: ""}
+                    <div className="form-group">
                         <label>Email:</label>
-                        <input onChange = {regChangeHandler} type="text" className="" name="email" />
-                        {errors.email? <p className = "text-danger" > {errors.email.message}</p>: ""}
+                        <input onChange = {regChangeHandler} type="text" className="form-input" name="email" />
                     </div>
-                    <div className="register-form-group">
+                    {errors.email? <p className = "text-danger error" > {errors.email.message}</p>: ""}
+                    <div className="form-group">
                         <label>Password:</label>
-                        <input onChange = {regChangeHandler} type="password" className="" name="password" />
-                        {errors.password? <p className = "text-danger" > {errors.password.message}</p>: ""}
+                        <input onChange = {regChangeHandler} type="password" className="form-input" name="password" />
                     </div>
-                    <div className="register-form-group">
+                    {errors.password? <p className = "text-danger error" > {errors.password.message}</p>: ""}
+                    <div className="form-group">
                         <label>Confirm Password:</label>
-                        <input onChange = {regChangeHandler} type="password" className="" name="confirm_password" />
-                        {errors.confirm_password? <p className = "text-danger" > {errors.confirm_password.message}</p>: ""}
+                        <input onChange = {regChangeHandler} type="password" className="form-input" name="confirm_password" />
                     </div>
-                    <div className="register-form-group">
+                    {errors.confirm_password? <p className = "text-danger error" > {errors.confirm_password.message}</p>: ""}
+                    <div className="form-group">
                         <label>Sigun up for our Newsletter:</label>
-                        <input onChange = {regChangeHandler} type="checkbox" className="" name="newsletter" />
+                        <input onChange = {regChangeHandler} type="checkbox" className="form-input" name="newsletter" />
                     </div>
-                    <input type = "submit" value = "Register" />
+                    <input type = "submit" className="register-btn" value = "Register" />
                 </form>
             </div>
         </div>
