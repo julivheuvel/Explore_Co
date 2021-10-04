@@ -1,7 +1,7 @@
 const User = require("../models/user.models");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const {secret} = require("../config/webtoken.js");
+const {secret} = require("../config/webtoken");
 
 class UserController {
     register(req, res) {
@@ -21,7 +21,7 @@ class UserController {
         // ============
         User.findOne({email:req.body.email})
             .then(user => {
-                if(user == null){
+                if(user === null){
                     res.json({msg: "Email issues"}) //any error with email will show up here; make sure to both the error messages for password and email to be the same later
                 } else {
                     bcrypt.compare(req.body.password, user.password)
