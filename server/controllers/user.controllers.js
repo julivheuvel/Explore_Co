@@ -37,6 +37,16 @@ class UserController {
                 }
             })
             .catch(err => res.json(err))
+
+        // ============
+        //  Find All users
+        // ============
+        module.exports.findAll = (req, res) => {
+            User.find({})
+                .sort({ type: 'asc'})
+                .then(user => res.json({results: user}))
+                .catch(err => res.json({message: "Cannot find User!", error: err}))
+        }
     }
 
     getLoggedInUser(req,res){
