@@ -6,16 +6,20 @@ const NavBar = () => {
 
     const [loggedinuser, setLoggedInUser] = useState(null)
 
+    
     useEffect( () => {
-        axios.get("http://localhost8000:/api/users/getloggedinuser", {withCredentials:true})
-            .then(res => {
-                console.log("logged in stuff", res)
-                setLoggedInUser(res.data)
-            })
-            .catch(err => {
-                console.log("error with navigation")
-            })
-    }, []);
+            if (loggedinuser) {
+                axios.get("http://localhost8000:/api/users/getloggedinuser", {withCredentials:true})
+                    .then(res => {
+                        console.log("logged in stuff", res)
+                        setLoggedInUser(res.data)
+                    })
+                    .catch(err => {
+                        console.log("error with navigation")
+                    })
+                }
+            }, [loggedinuser]);
+
 
     return (
         <div className="navbar">
@@ -28,15 +32,11 @@ const NavBar = () => {
                 <Link to="/services" className="nav-link">SERVICES</Link>
                 <Link to="/contact-us" className="nav-link">CONTACT</Link>
 
-                {loggedinuser?
-
+                {!loggedinuser?
                 <>
-
                 <Link to="/login" className="nav-link">LOGIN</Link>
-
                 </>
                 :<Link to="/" className="nav-link">Logout</Link>
-
                 }
 
             </div>
