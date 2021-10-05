@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "@reach/router";
 
 // web-layout-components
 import NavBar from '../web-layout-components/NavBar';
@@ -11,7 +12,9 @@ const Index = () => {
             <div className="index">
             <NavBar />
                 <div className="index-content">
-                    <h4 className="start-exploring">START EXPLORING</h4>
+                    <div>
+                        <Link to="/login" className="start-exploring">START EXPLORING</Link>
+                    </div>
                     <div className="d-flex">
                         
                         <div className="index-quote">" icon</div>

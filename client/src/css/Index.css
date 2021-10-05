@@ -38,29 +38,26 @@
 
 .start-exploring {
     margin-bottom: 6em;
-    padding: .5em 2em;
+    padding: .5em 1.5em;
     text-align: center;
+    text-decoration: none;
+    color: black;
     font-family: 'Bebas Neeue', arial;
     background-color: rgb(255, 237, 136);
-    width: 14em;
-    border-radius: 12px;
-}
-.start-exploring:active {
-    transform: scale(0.90);
-    width: 14.5em;
+    border-radius: 10px;
 }
 
 .start-exploring:hover {
-    animation-name: explore;
-    animation-duration: 0.5s;
-    animation-delay: 0.2s;
-    animation-fill-mode: forwards;
+    background-color: rgb(224, 208, 118);
+    transform: scale(1.05);
 }
 
-@keyframes explore {
-    from {width: 14em;}
-    to {width: 14.5em;}
+.start-exploring:active {
+    background-color:  rgb(255, 237, 136);
+    transform: scale(0.97);
 }
+
+
 
 .index-quote {
     border: 1px red dashed;
