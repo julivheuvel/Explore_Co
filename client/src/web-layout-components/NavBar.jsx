@@ -15,7 +15,7 @@ const NavBar = () => {
             .catch(err => {
                 console.log("error with navigation")
             })
-    })
+    }, []);
 
     return (
         <div className="navbar">
