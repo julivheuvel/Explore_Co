@@ -4,12 +4,12 @@ import axios from "axios";
 
 const NavBar = () => {
 
-    const [loggedinuser, setLoggedInUser] = useState({})
+    const [loggedinuser, setLoggedInUser] = useState(null)
 
     useEffect( () => {
         axios.get("http://localhost8000:/api/users/getloggedinuser", {withCredentials:true})
             .then(res => {
-                console.log("logged in user info", res)
+                console.log("logged in stuff", res)
                 setLoggedInUser(res.data)
             })
             .catch(err => {
@@ -27,11 +27,16 @@ const NavBar = () => {
                 <Link to="/about-us" className="nav-link">ABOUT</Link>
                 <Link to="/services" className="nav-link">SERVICES</Link>
                 <Link to="/contact-us" className="nav-link">CONTACT</Link>
-                {!loggedinuser?
+
+                {loggedinuser?
+
                 <>
-                <p className="nav-link">{loggedinuser.parent_first_name}</p>
-                <Link to="/dashboard" className="nav-link">Logout</Link>
-                </>:<Link to="/login" className="nav-link">LOGIN</Link>
+
+                <Link to="/login" className="nav-link">LOGIN</Link>
+
+                </>
+                :<Link to="/" className="nav-link">Logout</Link>
+
                 }
 
             </div>
