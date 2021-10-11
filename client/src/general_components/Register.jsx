@@ -90,7 +90,7 @@ const Register = () => {
                     </div>
                     {errors.confirm_password? <p className = "text-danger" > {errors.confirm_password.message}</p>: ""}
                     <div className="form-group">
-                        <label>Sigun up for our Newsletter:</label>
+                        <label>Sign up for our Newsletter:</label>
                         <input onChange = {regChangeHandler} type="checkbox" className="form-input" name="newsletter" />
                     </div>
                     <input type = "submit" className="btn" value = "Register" />
